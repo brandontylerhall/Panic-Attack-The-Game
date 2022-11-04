@@ -5,19 +5,23 @@
 		<link rel="stylesheet" href="css/ui.css">
 	</head>
 	<body>
-		<main class="container">
-			<div class="game-box">
-				<div class="game-text"></div>
-					<form id="input-field">
-						<label for="input">
-							<input id="input" name="input" type="text" placeholder="what would you like to do:">
-						</label>
-					</form>
+	<!--basically what makes the rest of the stuff inside not resize-->
+	<main class="container">
+		<!--the grey box containing .game-text and .user-input-->
+		<div class="game-box">
+			<!--where the story text will be displayed-->
+			<div class="game-text"></div>
+			<!--obviously where the user tells the game what they wanna do-->
+			<form id="input-field">
+				<label for="user-input">
+					<input id="user-input" name="user-input" type="text" placeholder="what would you like to do:">
+				</label>
+			</form>
 		</div>
-		</main>
+	</main>
 
-<!--		<script type="text/javascript" src="https://code.jquery.com/jquery-3.6.1.min.js"></script>-->
-<!--		<script type="text/javascript" src="js/rooms.js"></script>-->
-<!--		<script type="text/javascript" src="js/script.js"></script>-->
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<!--		<script type="text/javascript" src="js/rooms.js"></script>-->
+	<script type="text/javascript" src="js/script.js"></script>
 	</body>
 </html>
