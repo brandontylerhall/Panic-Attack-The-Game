@@ -9,8 +9,6 @@ function changeRoom(dir) {
     } else {
         $('#game-text').append("<p>Seeing as there isn't a door in that direction, you walk right into a wall. You feel like a big ol' dumbass, as you should.</p>");
     }
-
-
 }
 
 function showHelp() {
@@ -20,7 +18,6 @@ function showHelp() {
         $('#game-text').append("<li>" + commands[i] + "</li>");
     }
     $('#game-text').append("</ul></p>");
-
 }
 
 function showInventory() {
