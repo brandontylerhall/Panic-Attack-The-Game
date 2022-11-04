@@ -36,3 +36,12 @@ const rooms = [
         state: 'unlocked',
     },
 ]
+
+let rooms = {
+    "kitchen": {
+        "description": "",
+        "item": 'punch bowl',
+        "npcs": 'spin-the-bottle',
+        "state": 'unlocked'
+    },
+}
