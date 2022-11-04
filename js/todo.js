@@ -27,10 +27,13 @@
     car window
  */
 
-/* TODO: code
+/* TODO: js
+    create a sort of credits screen at the beginning (intervalled to whatever)
     opening shot/prologue: interval the text so it's like a scrolling type shit
     make button interface for speech
-    do like zork:
-        KITCHEN
-        blah blah blah
  */
+
+/*TODO: css
+   eventually figure out some scenery art and put that as the background-image on .game-text (MS paint lmfao)
+   eventually figure out a better color scheme bc this shit is horrendous
+*/
