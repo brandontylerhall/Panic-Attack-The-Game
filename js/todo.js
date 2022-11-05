@@ -28,7 +28,7 @@
  */
 
 /* TODO: js
-    create a sort of credits screen at the beginning (intervalled to whatever)
+    ✓✓✓ create a sort of credits screen at the beginning (intervalled to whatever) ✓✓✓
     opening shot/prologue: interval the text so it's like a scrolling type shit
     make button interface for speech
  */
