@@ -2,6 +2,7 @@ var currentRoom = "start";
 var commands = ["go", "pickup", "inventory", "talk"];
 var inventory = ["sword", "shield"];
 
+//TODO: add replaceWith(rooms[currentRoom].description) where necessary
 function changeRoom(dir) {
     if (rooms[currentRoom].directions[dir] !== undefined) {
         currentRoom = rooms[currentRoom].directions[dir]
@@ -52,14 +53,16 @@ function playerInput(input) {
     }
 }
 
-$(document).ready(function() {
-    $('#game-text').append("<p>" + rooms.start.description + "</p>");
+setTimeout(() => {
+    $(document).ready(function() {
+        $('.fade').replaceWith(rooms.start.description);
 
-    $(document).keypress(function(key) {
-        if (key.which === 13 && $('#user-input').is(':focus')) {
-            var value = $('#user-input').val().toLowerCase();
-            $('#user-input').val("");
-            playerInput(value);
-        }
+        $(document).keypress(function(key) {
+            if (key.which === 13 && $('#user-input').is(':focus')) {
+                var value = $('#user-input').val().toLowerCase();
+                $('#user-input').val("");
+                playerInput(value);
+            }
+        })
     })
-})
+}, 7000)
