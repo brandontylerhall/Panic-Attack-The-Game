@@ -21,19 +21,22 @@
  */
 
 /* TODO: items/action checks
-    coke
-    dead spin-the-bottle fucks
-    key to room
-    car window
+    figure out how to even implement this shit
+    car window smashy smash
+    coke thing
+    key to bedroom
+    dead spin-the-bottle peeps
  */
 
 /* TODO: js
     ✓✓✓ create a sort of credits screen at the beginning (intervalled to whatever) ✓✓✓
-    opening shot/prologue: interval the text so it's like a scrolling type shit
+    opening shot/prologue: interval the text so it's like a scrolling type shit (function?)
     make button interface for speech
+    *** tentative *** store strings in JS instead of inside HTML
  */
 
 /*TODO: css
-   eventually figure out some scenery art and put that as the background-image on .game-text (MS paint lmfao)
+   eventually figure out some scenery art and put that as the background-image on .text-container (MS paint lmfao)
    eventually figure out a better color scheme bc this shit is horrendous
+   *** not actually css but y'know... *** jquery animations (mayhaps)
 */
