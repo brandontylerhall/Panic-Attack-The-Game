@@ -1,6 +1,6 @@
-var currentRoom = "start";
-var commands = ["go", "pickup", "inventory", "talk"];
-var inventory = ["sword", "shield"];
+let currentRoom = "start";
+let commands = ["go", "pickup", "inventory", "talk"];
+let inventory = ["sword", "shield"];
 
 //TODO: add replaceWith(rooms[currentRoom].description) where necessary
 function changeRoom(dir) {
@@ -15,7 +15,7 @@ function changeRoom(dir) {
 function showHelp() {
     $('#game-text').append("<p>Here are the possible commands: </p>");
     $('#game-text').append("<p><ul>");
-    for (var i = 0; i < commands.length; i++) {
+    for (let i = 0; i < commands.length; i++) {
         $('#game-text').append("<li>" + commands[i] + "</li>");
     }
     $('#game-text').append("</ul></p>");
@@ -28,7 +28,7 @@ function showInventory() {
     }
     $('#game-text').append("<p>Here is your inventory: </p>");
     $('#game-text').append("<p><ul>");
-    for (var i = 0; i < inventory.length; i++) {
+    for (let i = 0; i < inventory.length; i++) {
         $('#game-text').append("<li>" + inventory[i] + "</li>");
     }
     $('#game-text').append("</ul></p>");
@@ -36,10 +36,10 @@ function showInventory() {
 }
 
 function playerInput(input) {
-    var command = input.split(" ")[0];
+    let command = input.split(" ")[0];
     switch (command) {
         case "go":
-            var dir = input.split(" ")[1];
+            let dir = input.split(" ")[1];
             changeRoom(dir);
             break;
         case "help":
@@ -59,7 +59,7 @@ setTimeout(() => {
 
         $(document).keypress(function(key) {
             if (key.which === 13 && $('#user-input').is(':focus')) {
-                var value = $('#user-input').val().toLowerCase();
+                let value = $('#user-input').val().toLowerCase();
                 $('#user-input').val("");
                 playerInput(value);
             }
