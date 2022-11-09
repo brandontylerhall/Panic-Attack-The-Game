@@ -63,3 +63,29 @@ h1.fade span {
         opacity: 1
     }
 }
+
+/*prologue animation -- how to implement?*/
+
+/*
+#scroll-container {
+    border: 3px solid black;
+    border-radius: 5px;
+    height: 100px;
+    overflow: hidden;
+}
+
+#scroll-text {
+    height: 100%;
+    text-align: center;
+    transform: translateY(-100%);
+    animation: text-scroll 5s linear infinite;
+}
+
+@keyframes text-scroll {
+    from {
+        transform: translateY(-100%);
+    }
+    to {
+        transform: translateY(100%);
+    }
+}*/
