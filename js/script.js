@@ -1,6 +1,6 @@
 let currentRoom = "start";
 let commands = ["go", "pickup", "inventory", "talk"];
-let inventory = ["sword", "shield"];
+let inventory = [];
 let gameText = document.getElementById('game-text');
 
 
@@ -13,7 +13,7 @@ function changeRoom(dir) {
         currentRoom = rooms[currentRoom].directions[dir]
         gameText.innerHTML = rooms[currentRoom].description;
     } else {
-        $('#game-text').append("<p>Seeing as there isn't a door in that direction, you walk right into a wall. You feel like a big ol' dumbass, as you should.</p>");
+        $('#game-text').append("<br><br> <p>Seeing as there isn't a door in that direction, you walk right into a wall. You feel like a big ol' dumbass, as you should.</p>");
     }
 }
 
@@ -48,13 +48,33 @@ function showInventory() {
 /*
 * this function takes what the player has written and splits the string at the space
 * it then looks at the first word to check what to do next
-* if it is "go," it will then look at what direction you are going
+* if it is "go," it will then look at what direction you are going, etc
 */
 function playerInput(input) {
     let command = input.split(" ")[0];
     switch (command) {
         case "go":
             let dir = input.split(" ")[1];
+            switch (dir) {
+                case "straight" || "north":
+                    dir = "north"
+                    break;
+                case "inside":
+                    dir = "north"
+                    break;
+                case "down" || "south":
+                    dir = "south"
+                    break;
+                case "outside":
+                    dir = "south"
+                    break;
+                case "right" || "east":
+                    dir = "east"
+                    break;
+                case "left" || "west":
+                    dir = "west"
+                    break;
+            }
             changeRoom(dir);
             break;
         case "help":
@@ -64,7 +84,7 @@ function playerInput(input) {
             showInventory();
             break;
         default:
-            $('#game-text').append("<p>Invalid command!</p>");
+            $('#game-text').append("<br><br> <p>Invalid command!</p>");
     }
 }
 
@@ -74,15 +94,15 @@ function playerInput(input) {
 * it replaces the title card with the actual game text 1 second after the title card fade out
 */
 setTimeout(() => {
-    $(document).ready(function() {
-        gameText.innerHTML = rooms.start.description;
+$(document).ready(() => {
+    gameText.innerHTML = rooms.start.description;
 
-        $(document).keypress(function(key) {
-            if (key.which === 13 && $('#user-input').is(':focus')) {
-                let value = $('#user-input').val().toLowerCase();
-                $('#user-input').val("");
-                playerInput(value);
-            }
-        })
+    $(document).keypress(function (key) {
+        if (key.which === 13 && $('#user-input').is(':focus')) {
+            let value = $('#user-input').val().toLowerCase();
+            $('#user-input').val("");
+            playerInput(value);
+        }
     })
+})
 }, 7000)
