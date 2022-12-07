@@ -1,0 +1,27 @@
+body {
+    background-color: saddlebrown;
+}
+
+input {
+    width: 90%;
+    border: none;
+    background: none;
+    color: white;
+}
+
+input::placeholder {
+    color: white;
+}
+
+#card-shadow {
+    height: 55%;
+    width: 55%;
+    background-color: grey;
+    border: 2px solid;
+}
+
+#game-box {
+    border: 10px double black;
+    height: 45%;
+    width: 45%;
+}
