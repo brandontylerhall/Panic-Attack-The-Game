@@ -36,6 +36,7 @@
  */
 
 /*TODO: css
+   ✓✓✓ recreate the ui in bootstrap ✓✓✓
    eventually figure out some scenery art and put that as the background-image on .text-container (MS paint lmfao)
    eventually figure out a better color scheme bc this shit is horrendous
    *** not actually css but y'know... *** jquery animations (mayhaps)
