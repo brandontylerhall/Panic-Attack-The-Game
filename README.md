@@ -25,6 +25,7 @@ locations to implement:
 
 characters to implement with speech:
 
+    figure out how to create different constants containing different characters dialogue
     MC's brother
     bathroom freaks ***** dead dude scene
     Mr Kitty *** when not commanding you to do actions, randomly offer unimaginable truths
@@ -33,8 +34,8 @@ characters to implement with speech:
 
 puzzles to implement:
 
-    stairs being "locked" *** check for charisma buff
-    bathroom being locked *** check for broken car
+    stairs being blocked *** check for charisma buff
+    bathroom being locked *** check for vandalism
     key to room *** check for poisoned well
 
 items/action checks:
@@ -49,7 +50,7 @@ js to implement:
 
     ✓✓✓ create a sort of credits screen at the beginning (intervalled to whatever) ✓✓✓
     opening shot/prologue: interval the text so it's like a scrolling type shit (function?)
-    make button interface for speech
+    ✓✓✓ make button interface for speech ✓✓✓
     *** mayhaps *** store strings in JS instead of inside HTML
 
 css/bootstrap to implement:
