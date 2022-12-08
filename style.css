@@ -25,3 +25,35 @@ input::placeholder {
     height: 45%;
     width: 45%;
 }
+
+h1 {
+    margin-bottom: 5em;
+}
+
+p {
+    margin-bottom: 3em;
+    max-width: 60vw;
+}
+
+.btn {
+    background-color: hsl(200, 100%, 50%);
+    border: 1px solid hsl(200, 100%, 30%);
+    border-radius: 5px;
+    padding: 5px 10px;
+    color: white;
+    outline: none;
+}
+
+.text {
+    border: 1px;
+}
+.hidden {
+    visibility: hidden;
+}
+
+.btn-grid {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    gap: 10px;
+    margin-top: 20px
+}
