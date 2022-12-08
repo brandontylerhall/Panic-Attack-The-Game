@@ -1,7 +1,11 @@
 let currentRoom = "start";
 let commands = ["go", "pickup", "inventory", "talk"];
 let inventory = [];
-let gameText = document.getElementById('game-text');
+const gameText = document.getElementById('game-text');
+const speechText = document.getElementById('char-text');
+const charName = document.getElementById('char-speech');
+const buttons = document.getElementById('buttons');
+let state = {};
 
 
 /*
@@ -53,6 +57,7 @@ function showInventory() {
 function playerInput(input) {
     let command = input.split(" ")[0];
     switch (command) {
+        /***********************************/
         case "go":
             let dir = input.split(" ")[1];
             switch (dir) {
@@ -68,6 +73,9 @@ function playerInput(input) {
                 case "outside":
                     dir = "south"
                     break;
+                case "behind":
+                    dir = "south"
+                    break;
                 case "right" || "east":
                     dir = "east"
                     break;
@@ -77,9 +85,19 @@ function playerInput(input) {
             }
             changeRoom(dir);
             break;
+        /***********************************/
+        case "talk":
+            let npc = input.split(" ")[1];
+            switch (npc) {
+
+            }
+            talkTo(npc);
+            break;
+        /***********************************/
         case "help":
             showHelp();
             break;
+        /***********************************/
         case "inventory":
             showInventory();
             break;
@@ -88,14 +106,46 @@ function playerInput(input) {
     }
 }
 
+/* this function iterates through the dialogue object, extracting the necessary data and pushes it out to the speech interface */
+function showTextNode(textNodeIndex) {
+    const textNode = textNodes.find(textNode => textNode.id === textNodeIndex)
+    speechText.innerHTML = `<p> ${textNode.text} </p>`
+
+    while (buttons.firstChild) {
+        buttons.removeChild(buttons.firstChild)
+    }
+    textNode.options.forEach(option => {
+        if (showOption(option)) {
+            const button = document.createElement('button')
+            button.innerText = option.text
+            button.classList.add('btn')
+            button.addEventListener('click', () => selectOption(option))
+            buttons.appendChild(button)
+        }
+    })
+}
+
+function showOption(option) {
+    return option.requiredState == null || option.requiredState(state)
+}
+
+/* this function iterates through the dialogue object, extracting the necessary data and pushes it out to the speech buttons */
+function selectOption(option) {
+    const nextTextNodeId = option.nextText
+    state = Object.assign(state, option.setState)
+    showTextNode(nextTextNodeId)
+}
+
 /*
 * this is what makes the actual game start
 * it is wrapped inside a timeout because of the title card
 * it replaces the title card with the actual game text 1 second after the title card fade out
 */
-setTimeout(() => {
+// setTimeout(() => {
 $(document).ready(() => {
     gameText.innerHTML = rooms.start.description;
+    showTextNode(1);
+    state = {};
 
     $(document).keypress(function (key) {
         if (key.which === 13 && $('#user-input').is(':focus')) {
@@ -105,4 +155,4 @@ $(document).ready(() => {
         }
     })
 })
-}, 7000)
+// }, 7000)
